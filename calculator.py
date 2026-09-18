@@ -1,3 +1,11 @@
+# 공통 조상이었던 c1
+#def add(a,b):
+#    return a + b
+
+#print(add(3, 4))
+
+# feature/mul ver2
+# div function
 def mul(a, b):
     return a * b
 
