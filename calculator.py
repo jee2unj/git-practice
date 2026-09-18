@@ -5,6 +5,7 @@ print(mul(3, 4))
 
 def add(a,b):
     print("add called")
+    print("calculating...")
     return a + b
 
 print(add(3, 4))
