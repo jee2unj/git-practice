@@ -1,0 +1,14 @@
+name: Shell Command
+on: workflow_dispatch
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check environment
+        run: |
+          echo "Currnet directory:"
+          pwd
+          echo "Flie list:"
+          ls -la
+      - name: check file
+        run: |

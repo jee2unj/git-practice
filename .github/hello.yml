@@ -6,3 +6,5 @@ jobs:         # 잡 정의(해당 워크플로우가 무엇을 실행)
     steps:    # 명령어 목록
       - run: echo "Hello, world!!"  # Shell 명령어
       - uses: actions/checkout@v4
+  test:
+    runs-on: ubuntu-latest
