@@ -4,4 +4,5 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "YAML Syntex Error"
+      - run: echo "YAML Syntex Error"   # 들여쓰기 형식 등
+      # 에러 메시지가 자세하지 않아서 찾기 어려움
