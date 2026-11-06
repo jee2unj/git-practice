@@ -1,7 +1,7 @@
 name: Manual
 on:
   workflow_dispatch:
-    inputs:             # 응?
+    inputs:             # run workflow 시 사용자로부터 입력받음
       greeting:
         type: string
         default: Hello
