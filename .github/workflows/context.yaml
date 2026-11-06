@@ -9,9 +9,9 @@ jobs:
         run: |
           echo "Repository: ${{ github.repositroy }}"
           echo "Actor: ${{ github.actor }}"
-          echo "Event: ${{
-          echo "Branch:
-          echo "Commit:
+          echo "Event: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
       - name: Runner Information    # workflow runner가 실행되어야 존재?
         run: |
           echo "Runner: ${{ runner.name }}"
