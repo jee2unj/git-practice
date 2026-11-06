@@ -1,0 +1,21 @@
+name: Contexts
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.actor }}"
+      - name: GitHub Context
+        run: |
+          echo "Repository: ${{ github.repositroy }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Event: ${{
+          echo "Branch:
+          echo "Commit:
+      - name: Runner Information    # workflow runner가 실행되어야 존재?
+        run: |
+          echo "Runner: ${{ runner.name }}"
+          echo "OS: ${{ runner.os}}"
+          echo "Architecture: ${{ runner.arch }}"
+          echo "Environment: ${{ runner.environment }}"
+          echo "Temp: ${{ runner.temp }}"
