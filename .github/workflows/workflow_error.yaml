@@ -1,6 +1,6 @@
 name: Workflow error
 on: push
-job:
+jobs:
   run:
     run-on: ubuntu-latest
     steps:
