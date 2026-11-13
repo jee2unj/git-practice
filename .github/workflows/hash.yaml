@@ -1,0 +1,25 @@
+name: Hash Funtions Example
+on: workflow_dispatch
+jobs:
+  hash-functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Sample File
+        run: |
+          echo "Hello GitHub Actions" > sample.txt    # 파일 생성
+      
+      - uses: actions/checkout@v5   # checkout 위치: runner가 초기화됨 = 앞에서 설정한 환경변수가 날아감
+      - name: Hash Test
+        env:
+          RESULT_HASH: "${{ hashFiles('samples.txt') }}"
+          RESULT_ALL: "${{ hashFiles('*.txt') }}"
+          RESULT_MISSING: "${{ hashFiles('missing.txt.') }}" # 실패하면 null로 반환한다고?
+        run:
+
+      
+      # - uses: actions/checkout@v5
+      - name: GitHub File Hash
+        env:
+          RESULT_YAML: "${{ hashFiles('.github/workflows/*.yaml') }}"
+        run:
+          printenw | grep '^RESULT_'    # uses가 없으면 파일이 없다고 뜬다고?
