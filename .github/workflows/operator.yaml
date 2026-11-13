@@ -1,0 +1,28 @@
+name: Operator Example
+on: workflow_dispatch
+jobs:
+  operator:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 논리 연산
+      - name: Logical Operators
+        run: |
+          echo "AND: ${{ true && false }}"
+          echo "OR: ${{ true || false }}"
+          echo "NOT: ${{ !true }}"
+      
+      # 2. 비교 연산
+      - name: Comparison Operators
+        run: |
+          echo "Equal: ${{ 10 == 10 }}"
+          echo "Not Equal: ${{ 10 !== 20}}"
+          echo "Greater: ${{ 10 > 5 }}"
+          echo "Less: ${{ 10 < 20 }}"
+          echo "Greater Equal: ${{ 10 >= 10 }}"
+          echo "Less Equal &{{ 10 <= 10 }}"
+          echo "Type Error: ${{ false == 0 }}"
+
+      # 3. 그룹핑
+      - name: Grouping
+        run: |
+          echo "Group1: ${{  }}"
