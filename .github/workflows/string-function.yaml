@@ -1,0 +1,15 @@
+name: String Function Example
+on: workflow_dispatch
+jobs:
+  string-fuction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: String Comparison Test
+        env:
+          TEST_CONTAINS_1: ${{ contains('Hello GitHub', 'Git') }} # 부분탐지
+          TEST_CONTAINS_2: ${{ contains('Hello GitHub', 'Python') }}
+          TEST_ENDSWITH_1:
+          TEST_ENDSWITH_2:
+          TEST_STARTSWITH_1:
+          TEST_STARTSWITH_2:
+          # 로그 검색에 특화
