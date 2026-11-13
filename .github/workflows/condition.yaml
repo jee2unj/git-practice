@@ -1,0 +1,11 @@
+name: Conditional Example
+on: workflow_dispatch
+jobs:
+  conditional:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Run ID
+        run: echo "Run ID = ${{ github.run_id }}"
+
+      - name: Print Hello
+        if: ${{ conrains(github.run_id, '1') }}
