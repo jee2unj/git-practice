@@ -1,0 +1,19 @@
+# 같은 runner에 있을 떄?
+name: Variable Example
+on: workflow_dispatch
+jobs:
+  variable-test:
+    runs-on: ubuntu-latest
+
+    env:
+      MESSAGE: Hello GitHub
+
+    steps:
+      - name: Normal ENV
+        run: echo "ENV = $MESSAGE"
+
+      - name: Create Variavles
+        id: create
+        run: |
+          echo "DYNAMIC=Hello ENV" >> "$GITHUB_ENV"
+          echo "result=Hello OUTPUT" >> "$GITHUB_OUTPUT"
