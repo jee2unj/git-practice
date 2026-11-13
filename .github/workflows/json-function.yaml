@@ -1,0 +1,11 @@
+name: JSON Funcions Example
+on: workflow_dispatch
+jobs:
+  json-functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: JSON Test
+        env:
+          # fromJSON()
+          RESULT_NAME: "${{ fronJSON(umm)}}"
+          # 어우
