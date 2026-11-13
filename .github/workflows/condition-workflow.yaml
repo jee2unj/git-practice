@@ -17,4 +17,4 @@ jobs:
     needs: job2
     runs-on: ubuntu-latest
     steps:
-      - run: echo "job3 executed"
+      - run: echo "Job3 executed"
