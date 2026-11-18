@@ -9,7 +9,7 @@ jobs:
         run: |
           echo "Hello GitHub Actions" > sample.txt
       
-      #- uses: actions/checkout@v5   # checkout 위치: runner가 초기화됨 = 앞에서 설정한 환경변수가 날아감
+      - uses: actions/checkout@v5   # checkout 위치: runner가 초기화됨 = 앞에서 설정한 환경변수가 날아감
       # 2. 해시 생성
       - name: Hash Test
         env:
@@ -20,7 +20,7 @@ jobs:
           printenv | grep '^RESULT_' | sort
 
       
-      - uses: actions/checkout@v5
+      #- uses: actions/checkout@v5
       - name: GitHub File Hash
         env:
           RESULT_YAML: "${{ hashFiles('.github/workflows/*.yaml') }}"
