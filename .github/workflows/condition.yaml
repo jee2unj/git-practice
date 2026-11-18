@@ -9,8 +9,8 @@ jobs:
       
       # if 먼저 작성
       - name: Print Hello
-        if: ${{ contains(github.run_id, '1') }}
-        run: echo "Hello"
+        if: ${{ contains(github.run_id, '2') }}
+        run: echo "Hello"     # 조건 불만족시 무시됨
 
       # run 먼저
       - name: Print Goodbye
