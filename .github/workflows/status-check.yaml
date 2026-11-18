@@ -34,5 +34,5 @@ jobs:
 
       # 7. 취소 상태 확인
       - name: Cancelled Test
-        if: ${{ canclled() }}
+        if: ${{ cancelled() }}
         run: echo "Workflow was cancelled"
