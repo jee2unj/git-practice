@@ -1,1 +1,10 @@
 # workflow 실행될 때마다 출력되는 로그 변경
+name: Run Name Example
+run-name: "Run #${{ github.run_number }} by ${{ github.actor }} on ${{ github.ref_name }}"
+on: workflow_dispatch
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello
+        run: echo "Hello GitHub Actions"
