@@ -11,7 +11,7 @@ jobs:
           TEST_ENDSWITH_1: ${{ endsWith('Hello GitHub', 'GitHub') }}
           TEST_ENDSWITH_2: ${{ endsWith('Hello GitHub', 'Hello') }}
           TEST_STARTSWITH_1: ${{ startsWith('Hello GitHub', 'Hello') }}
-          TEST_STARTSWITH_2: ${{ startsWith{'Hello GitHub', 'Git') }}
+          TEST_STARTSWITH_2: ${{ startsWith('Hello GitHub', 'Git') }}
           TEST_CASE: ${{ contains('Hello GitHub', 'github') }}
           # 로그 검색에 특화
 
