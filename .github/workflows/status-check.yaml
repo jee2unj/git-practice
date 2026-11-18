@@ -15,11 +15,11 @@ jobs:
 
       # 3. 의도적의 오류 발생
       - name: Fail Step
-        run: exit 1
+        run: exit 1         # 실패하는 순간 아래 작업들 무시되는데
 
       # 4. 실패 상태 확인
       - name: Failure Test
-        if: ${{ failure() }}
+        if: ${{ failure() }}      # 얘는 동작하고
         run: echo "A previous step failed"
 
       # 5. 성공 상태 재확인
@@ -29,7 +29,7 @@ jobs:
 
       # 6. 항상 실행
       - name: Always Test
-        if: ${{ always() }}
+        if: ${{ always() }}       # 얘도 동작하고
         run: echo "Always executed"
 
       # 7. 취소 상태 확인
