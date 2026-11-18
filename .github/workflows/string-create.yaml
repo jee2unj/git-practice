@@ -14,6 +14,6 @@ jobs:
           # join()
           RESULT_JOIN_1: ${{ join(fromJSON('["Apple", "Banana", "Cherry"]'), ', ' )}}
           RESULT_JOIN_2: ${{ join(fromJSON('["A", "B", "C"]'), '-') }}
-          RESULT_JOIN_3: ${{ join(fromJSON('["Red", "Green", "Blue"]')) }}
+          RESULT_JOIN_3: ${{ join(fromJSON('["Red", "Green", "Blue"]')) }}  # , defalut
 
         run: printenv | grep '^RESULT_' | sort
