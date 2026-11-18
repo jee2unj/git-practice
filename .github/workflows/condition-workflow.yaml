@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   # 1. guest 계정만 실행 가능
   job1:
-    # if: ${{ github.actor == 'guest' }}
+    if: ${{ github.actor == 'guest' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job1 executed successfully"
