@@ -11,7 +11,7 @@ jobs:
         env:
           FIRST: ${{ fromJSON(env.FRUITS).fruits[0].name }}
           NAMES: ${{ join(fromJSON(env.FRUITS).fruits.*.name, ', ') }}
-          PRICES: ${{ join(fromJSON(env.FRUITS).fruies.*.price, ', ') }}
+          PRICES: ${{ join(fromJSON(env.FRUITS).fruits.*.price, ', ') }}
         run: |
           echo "Frist: $FIRST"
           echo "Names: $NAMES"
