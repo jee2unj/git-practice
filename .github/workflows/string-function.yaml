@@ -12,7 +12,7 @@ jobs:
           TEST_ENDSWITH_2: ${{ endsWith('Hello GitHub', 'Hello') }}
           TEST_STARTSWITH_1: ${{ startsWith('Hello GitHub', 'Hello') }}
           TEST_STARTSWITH_2: ${{ startsWith('Hello GitHub', 'Git') }}
-          TEST_CASE: ${{ contains('Hello GitHub', 'github') }}
+          TEST_CASE: ${{ contains('Hello GitHub', 'github') }}    # 대소문자 상관 없이 탐지
           # 로그 검색에 특화
 
         run: printenv | grep '^TEST_' | sort

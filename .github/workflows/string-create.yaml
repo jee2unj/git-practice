@@ -9,7 +9,11 @@ jobs:
           # format()
           RESULT_FORMAT_1: ${{ format('Hello {0}', 'GitHub')}}
           RESULT_FORMAT_2: ${{ format('{0} {1}', 'Hello', 'World') }}
-          RESULT_FORMAT_3:    # "" 지우면 오류 -> : 때문에 syntex error
+          RESULT_FORMAT_3: "${{ format('Name: {0}, Age: {1}', 'Kim', 20) }}"   # "" 지우면 오류 -> : 때문에 syntex error
 
           # join()
-          RESULT_JOIN_1: ${{ join(fromJSON('["Apple", "Banana", "Cherry"}') ')}}
+          RESULT_JOIN_1: ${{ join(fromJSON('["Apple", "Banana", "Cherry"}'), ', ' )}}
+          RESULT_JOIN_2: ${{ join(fromJSON('["A", "B", "C"]'), '-') }}
+          RESULT_JOIN_3: ${{ join(fromJSON('["Red", "Green", "Blue"]')) }}
+
+        run: printenv | grep '^RESULT_' | sort
