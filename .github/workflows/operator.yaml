@@ -15,7 +15,7 @@ jobs:
       - name: Comparison Operators
         run: |
           echo "Equal: ${{ 10 == 10 }}"
-          echo "Not Equal: ${{ 10 !== 20}}"
+          echo "Not Equal: ${{ 10 != 20}}"
           echo "Greater: ${{ 10 > 5 }}"
           echo "Less: ${{ 10 < 20 }}"
           echo "Greater Equal: ${{ 10 >= 10 }}"
