@@ -1,3 +1,40 @@
-# : 쓰면 error나니까 key=value로 표현
-# Output은 runner 밖에 존재 -> context로 runner 내 환경변수에 저장
-# 종속성(needs)가 있어야 정상적으로 불러온다?
+name: Job Output Example
+on: workflows_dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    outputs:
+      result: ${{ steps.test.outputs.value }}
+
+    steps:
+      # 1. 두 가지 방식으로 값 생성
+      - name: Create Variables
+        id: test
+        run: |
+          echo "MESSAGE=Hello ENV" >> "$GITHUB_ENV"     # : 쓰면 error나니까 key=value로 표현
+
+          echo "value=PASS" >> "$GITHUB_OUTPUT"
+
+      # 2. 같은 Job에서 값 확인
+      - name: Read Variables
+        env:
+          OUTPUT_VALUE: ${{ steps.test.outputs.value }}
+        run: |
+          echo "GITHUB_ENV = $MESSAGE"
+          echo "GITHUB_OUTPUT = $OUTPUT_VALUE"
+
+  job2:
+    needs: job1           # 종속성(needs)가 있어야 정상적으로 불러온다?
+    runs-on: ubuntu-latest
+
+    env:
+      RESULT: ${{ needs.job1.outputs.result }}    # Output은 runner 밖에 존재 -> context로 runner 내 환경변수에 저장
+
+
+    steps:
+      # 3. 다른 Job에서 값 확인
+      - name: Read Job Output
+        run: |
+          echo "GITHUB_OUTPUT = $RESULT"
+        echo "GITHUB_ENV = ${MESSAGE:-Not Available}"
