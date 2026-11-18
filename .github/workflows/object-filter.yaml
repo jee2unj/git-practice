@@ -15,4 +15,4 @@ jobs:
         run: |
           echo "Frist: $FIRST"
           echo "Names: $NAMES"
-          echo "Prices: $PRICES
+          echo "Prices: $PRICES"
