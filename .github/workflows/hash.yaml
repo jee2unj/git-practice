@@ -4,22 +4,25 @@ jobs:
   hash-functions:
     runs-on: ubuntu-latest
     steps:
+      # 1. 파일 생성
       - name: Create Sample File
         run: |
-          echo "Hello GitHub Actions" > sample.txt    # 파일 생성
+          echo "Hello GitHub Actions" > sample.txt
       
-      - uses: actions/checkout@v5   # checkout 위치: runner가 초기화됨 = 앞에서 설정한 환경변수가 날아감
+      #- uses: actions/checkout@v5   # checkout 위치: runner가 초기화됨 = 앞에서 설정한 환경변수가 날아감
+      # 2. 해시 생성
       - name: Hash Test
         env:
           RESULT_HASH: "${{ hashFiles('samples.txt') }}"
           RESULT_ALL: "${{ hashFiles('*.txt') }}"
           RESULT_MISSING: "${{ hashFiles('missing.txt.') }}" # 실패하면 null로 반환한다고?
         run:
+          printenv | grep '^RESULT_' | sort
 
       
-      # - uses: actions/checkout@v5
+      - uses: actions/checkout@v5
       - name: GitHub File Hash
         env:
           RESULT_YAML: "${{ hashFiles('.github/workflows/*.yaml') }}"
         run:
-          printenw | grep '^RESULT_'    # uses가 없으면 파일이 없다고 뜬다고?
+          printenv | grep '^RESULT_'    # uses가 없으면 파일이 없다고 뜬다고?
