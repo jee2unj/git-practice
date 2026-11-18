@@ -2,7 +2,7 @@ name: Object Filter Example
 on: workflow_dispatch
 env:
   FRUITS: '{"fruits":[{"name":"Apple", "price":1000}, {"name":"Banana", "price":2000}, {"name":
-    "Cherry", "price":3000]}' # JSON 형식
+    "Cherry", "price":3000}]}' # JSON 형식
 jobs:
   object-filter:
     runs-on: ubuntu-latest
