@@ -6,6 +6,13 @@ jobs:
     steps:
       - name: Show Run ID
         run: echo "Run ID = ${{ github.run_id }}"
-
+      
+      # if 먼저 작성
       - name: Print Hello
-        if: ${{ conrains(github.run_id, '1') }}
+        if: ${{ contains(github.run_id, '1') }}
+        run: echo "Hello"
+
+      # run 먼저
+      - name: Print Goodbye
+        run: echo "Goodbye"
+        if: ${{ !contains(github.run_id, '1') }}
