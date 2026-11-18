@@ -10,8 +10,8 @@ jobs:
       - name: Object Filter Test
         env:
           FIRST: ${{ fromJSON(env.FRUITS).fruits[0].name }}
-          NAMES: ${{ join(fromJSON(env.FRUITS).fruits.*.name, ', ' }}
-          PRICES: ${{ join(fromJSON(env.FRUITS).fruies.*.price, ', ' }}
+          NAMES: ${{ join(fromJSON(env.FRUITS).fruits.*.name, ', ') }}
+          PRICES: ${{ join(fromJSON(env.FRUITS).fruies.*.price, ', ') }}
         run: |
           echo "Frist: $FIRST"
           echo "Names: $NAMES"
