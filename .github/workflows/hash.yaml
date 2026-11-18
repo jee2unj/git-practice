@@ -15,7 +15,7 @@ jobs:
         env:
           RESULT_HASH: "${{ hashFiles('samples.txt') }}"
           RESULT_ALL: "${{ hashFiles('*.txt') }}"
-          RESULT_MISSING: "${{ hashFiles('missing.txt.') }}" # 실패하면 null로 반환한다고?
+          RESULT_MISSING: "${{ hashFiles('missing.txt') }}" # 실패하면 null로 반환한다고?
         run:
           printenv | grep '^RESULT_' | sort
 
