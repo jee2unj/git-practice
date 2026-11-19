@@ -1,7 +1,7 @@
 # (hm) push할 때마다 issue 자동 생성되도록
 name: Create Issue on every push
 on: push
-permission:
+permissions:
   issues: write
 jobs:
   create:
