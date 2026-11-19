@@ -11,6 +11,7 @@ jobs:
     env: 
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       ISSUE_NUMBER: ${{ github.event.issue.nember }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
     
     steps:
       # 1. GitHub CLI 사용
