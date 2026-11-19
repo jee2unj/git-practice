@@ -18,10 +18,10 @@ jobs:
         run: |
           gh api \
             --method POST \
-            "repos/$GITHUB_REPOSITORY/issues"
-            -f title = "[Push] $PUSHER pushes new commit"
-            -f body = "written with GitHub CLI"
-            -f body = "Commit message: $COMMIT_MESSAGE"
+            "repos/$GITHUB_REPOSITORY/issues" \
+            -f title = "[Push] $PUSHER pushes new commit" \
+            -f body = "written with GitHub CLI" \
+            -f body = "Commit message: $COMMIT_MESSAGE" \
             --jq '.html_url'
 
       # 2. curl 사용
