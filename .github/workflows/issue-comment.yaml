@@ -18,8 +18,8 @@ jobs:
         run: |
           gh api \
             --method POST \
-            "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/comments"
-            -f body="Hello from GitHub CLI"
+            "repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/comments" \
+            -f body="Hello from GitHub CLI" \
             --jq '.html_url'
 
       # 2. curl 사용
