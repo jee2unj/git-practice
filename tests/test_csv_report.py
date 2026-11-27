@@ -17,3 +17,7 @@ def test_csv_empty(tmp_path):
     csv_file = tmp_path / "empty.csv"
     csv_file.write_text("price,quantity", encoding="utf-8")
     assert revenue_from_csv(csv_file) == 0
+
+
+def test_fixture_revenue(sample_csv):
+    assert revenue_from_csv(sample_csv) == 35_000
