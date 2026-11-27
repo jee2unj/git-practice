@@ -1,0 +1,11 @@
+name: Orderlab CI
+on: push
+# 권한
+permissions:
+
+jobs:
+  test-pricing:
+    runs-on: ubuntu-latest
+    steps:
+      # 컥
+      - name: 
