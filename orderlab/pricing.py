@@ -6,6 +6,7 @@ def subtotal(unit_price: int, quantity: int) -> int:
         raise ValueError("negative input")
     return unit_price * quantity
 
+
 def final_total(price: int, qty: int, discount: int) -> int:
     if not 0 <= discount <= 100:
         raise ValueError("invalid discount")
