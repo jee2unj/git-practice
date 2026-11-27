@@ -1,6 +1,7 @@
 # test_pricing.py
 
 import pytest
+
 from orderlab.pricing import subtotal
 
 
