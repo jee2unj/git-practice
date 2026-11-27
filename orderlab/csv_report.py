@@ -1,7 +1,6 @@
 # orderlab/csv_report.py
 
 import csv
-
 from pathlib import Path
 
 
