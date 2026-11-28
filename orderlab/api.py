@@ -1,8 +1,9 @@
 # orderlab/api.py
 
 from fastapi import FastAPI, HTTPException
-from orderlab.pricing import subtotal
 from pydantic import BaseModel, Field
+
+from orderlab.pricing import subtotal
 
 
 class OrderIn(BaseModel):
